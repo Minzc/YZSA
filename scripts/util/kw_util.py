@@ -40,7 +40,7 @@ def load_dict(dictfile, dict={}):
     return dict
 
 
-def backward_maxmatch( s, dict, maxWordLen, minWordLen ):
+def backward_maxmatch(s, dict, maxWordLen, minWordLen ):
     wordList = []
     curL, curR = 0, len(s)
     while curR >= minWordLen:
@@ -231,6 +231,7 @@ def gen_sentiment_class( emojifile, infile ):
         score = sum([emdict[w] for w in re.findall(r"\[.+?\]", ln)
                      if w in emdict])
         print (score > 0 and "正面" or (score < 0 and "负面" or "中性")) + '\t' + ln
+
 
 
 if __name__ == '__main__':
